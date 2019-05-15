@@ -1,0 +1,4 @@
+applications:
+- path: .
+  name: canvia-assistant-web-dev
+  memory: 64M

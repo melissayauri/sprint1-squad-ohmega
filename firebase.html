@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Firebase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+</head>
+<body>
+
+    <input id="textUser"></input>
+    <button onclick="sendToFireBase()">Enviar</button>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC9q-Wlx2HTF_f4twTzhc-QENZ9flaRMw0",
+            authDomain: "facebook-bot-5dac7.firebaseapp.com",
+            databaseURL: "https://facebook-bot-5dac7.firebaseio.com",
+            projectId: "facebook-bot-5dac7",
+            storageBucket: "facebook-bot-5dac7.appspot.com",
+            messagingSenderId: "146936705755"
+        };
+        firebase.initializeApp(config);
+
+        var db = firebase.firestore();
+
+        // Initialize Cloud Firestore through Firebase
+        /*
+        
+        db.collection("chats").add({
+            message: "Hola Carlo",
+            channel: "virtual-asssitant",
+            user: "client"
+        })
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+        */
+
+        db.collection("chats").doc("agente")
+        .onSnapshot({
+            // Listen for document metadata changes
+            includeMetadataChanges: true
+        }, function(doc) {
+            console.log(doc.data());
+        });
+
+        function sendToFireBase(){
+            var textUser = document.getElementById("textUser").value;
+            console.log(textUser);
+
+            // Add a new document in collection "cities"
+            db.collection("chats").doc("cliente").set({
+                respuesta: textUser
+            })
+            .then(function() {
+                console.log("Document successfully written!");
+            })
+            .catch(function(error) {
+                console.error("Error writing document: ", error);
+            });
+
+        }
+    </script>
+</body>
+</html>

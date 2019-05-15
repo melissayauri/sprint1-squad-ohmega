@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Canvia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="//localhost:4000/assistant.css">
+    <!--tipografía google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--Iconografía materialize-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- bxSlider CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+<!--Estilos materialize-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--estilos para los quick replies-->
+    <link rel="stylesheet" type="text/css" href="css/touch.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/initial.css" />-->
+    <!--estilos-->
+    <link rel="stylesheet" type="text/css" href="css/chat.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+   
+   
+</head>
+
+<body>
+  <!--<div class="activarkiara">Activa OHMEGA</div>-->
+  <!-- <div id="chat-widget" class="activarkiara chat-widget">
+        <p class="white-text center-align">Estamos para ayudarte</p>
+        <div class="chat-widget-avatar">
+            <img class="responsive-img" src="https://i.ibb.co/jT7YCwS/logo-canvia.png" alt="widget-canvia">
+        </div>
+    </div>-->
+    <img id="chat-widget" class="responsive-img activarkiara " src="http://svvscorp.com/img/ohmega/Gif-4.gif" alt="widget-gif">
+       
+		<!-- local -->
+		
+    <div id="kiara-conversation" env="local" user="Maria" key="nhuamuhhq8lqLdLL" trigger="activarkiara" class="w-animated w-bounceOutDown"></div>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	 <!-- bxSlider Javascript file -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="http://localhost:4000/assistant.js"></script>
+    
+    
+   
+
+    <!-- dev 
+      
+    <link rel="stylesheet" href="//ohmega-assistant-dev.mybluemix.net/assistant.css">
+		<div id="kiara-conversation" env="dev" key="nhuamuhhq8lqLdLL" trigger="activarkiara"></div>
+    <script src="//ohmega-assistant-dev.mybluemix.net/assistant.js"></script>
+
+    -->
+		
+    <!-- prd 
+    <link rel="stylesheet" href="//canvia-assistant-prd.mybluemix.net/assistant.min.css">
+		<div id="kiara-conversation" env="prd" key="cyaoV02maWP6YPEK" trigger="activarkiara"></div>
+    <script src="//canvia-assistant-prd.mybluemix.net/assistant.min.js"></script>
+		-->
+</body>
+</html>

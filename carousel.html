@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Canvia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Link Swiper's CSS -->
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+    <!-- bxSlider CSS file -->
+	  <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.css" rel="stylesheet" />
+   <style>
+   
+   .swiper-container {
+    width: 600px;
+    height: 300px;
+}
+   </style>
+   
+</head>
+
+<body>
+
+        <div class="carousel">
+            <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"><button class="btn-test">A</button></a>
+            <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"><button class="btn-test">B</button></a>
+            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"><button class="btn-test">C</button></a>
+        </div>
+
+        <div class="bxslider">
+            <div><img src="https://lorempixel.com/250/250/nature/1"></div>
+            <div><img src="https://lorempixel.com/250/250/nature/2"></div>
+            <div><img src="https://lorempixel.com/250/250/nature/3"></div>
+        </div>
+
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">Slide 1<button class="btn-test">A</button></div>
+                <div class="swiper-slide">Slide 2<button class="btn-test">B</button></div>
+                <div class="swiper-slide">Slide 3<button class="btn-test">C</button></div>
+                ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        
+            <!-- If we need scrollbar 
+            <div class="swiper-scrollbar"></div>
+            -->
+        </div>
+
+        
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    
+    <script>
+            var mySwiper = new Swiper ('.swiper-container', {
+                // Optional parameters
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                direction: 'horizontal',
+            
+                // If we need pagination
+                pagination: {
+                el: '.swiper-pagination',
+                },
+            
+                // Navigation arrows
+                navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+                },
+                // And if we need scrollbar
+            })
+        </script>
+    
+    <script>
+        $('.bxslider').bxSlider({
+            autoControls: true,
+            pager: true,
+            slideWidth: 600
+        });
+    
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').carousel();
+        });
+
+        document.querySelectorAll('.btn-test').forEach((a) => {
+		    a.addEventListener('click',() => sendOptionMessage(event))
+        })
+        
+        function sendOptionMessage(e){
+            console.log(e)
+            console.log(e.target.innerHTML)
+        }
+    </script>
+</body>
+</html>
